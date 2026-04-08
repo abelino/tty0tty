@@ -37,11 +37,7 @@
 #include <sys/select.h>
 #include <errno.h>
 
-#ifdef __APPLE__
-#include <term.h>
-#else
 #include <termios.h>
-#endif
 
 static char buffer[1024];
 

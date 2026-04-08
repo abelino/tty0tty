@@ -21,6 +21,10 @@ BUILD  = $(MIX_COMPILE_PATH)/../obj
 
 CFLAGS ?= -O2 -Wall -D_GNU_SOURCE -Wextra -Wno-unused-but-set-variable -Wno-unused-parameter -pedantic
 
+ifeq ($(shell uname),Darwin)
+	CFLAGS += -D_DARWIN_C_SOURCE
+endif
+
 calling_from_make:
 	mix compile
 
