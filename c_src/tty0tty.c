@@ -28,6 +28,9 @@
 
 #define _XOPEN_SOURCE 600
 #define _DEFAULT_SOURCE
+#ifdef __APPLE__
+#define _DARWIN_C_SOURCE
+#endif
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,11 +40,7 @@
 #include <sys/select.h>
 #include <errno.h>
 
-#ifdef __APPLE__
-#include <term.h>
-#else
 #include <termios.h>
-#endif
 
 static char buffer[1024];
 
